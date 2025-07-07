@@ -1,0 +1,10 @@
+.test*
+prototyping
+.snakemake
+STARManual.*
+old-pipeline.wdl
+rna-seq-pipeline
+__pycache__
+envs
+debug
+release

@@ -1,0 +1,15 @@
+workdir: "/zata/zippy/ramirezc/rna-smk"
+
+sequencing:
+  endedness: "paired"  # Required: Enum("paired", "single")
+  is_stranded: True  # Required: T/F
+  strand_direction: "reverse"  # Required: Enum("forward", "reverse", "unstranded")
+  rsem_seed: 42
+  
+input_files:
+  metadata: .test/metadata.tsv
+  gtf_file: ".test/gencode.v48.basic.annotation.gtf" # Optional: Assert not GZIPPED
+  reference_fasta: ".test/GRCh38_no_alt_analysis_set_GCA_000001405.15.fasta" # Optional: Assert not GZIPPED
+  knownIsoforms: ".test/knownIsoforms.txt" # This does not work well with older version of gencode (failed with v29)
+
+container: docker://clarity001/rna-smk:latest

@@ -1,0 +1,50 @@
+executor: slurm
+jobs: 128
+
+set-resources:
+  star_index:
+    runtime: 240
+    slurm_partition: 4hours
+    slurm_extra: "--cpu-freq=High-High:Performance"
+    threads: 44
+    cpus_per_task: 44
+    mem_mb: 128000
+  star_align:
+    runtime: 240
+    slurm_partition: 4hours
+    slurm_extra: "--cpu-freq=High-High:Performance"
+    threads: 44
+    cpus_per_task: 44
+    mem_gb: 128
+    mem_mb: 128000
+  bam_to_signals:
+    runtime: 240
+    slurm_partition: 4hours
+    slurm_extra: "--cpu-freq=High-High:Performance"
+    threads: 44
+    cpus_per_task: 44
+    mem_mb: 128000
+  rsem_index:
+    runtime: 240
+    slurm_partition: 4hours
+    slurm_extra: "--cpu-freq=High-High:Performance"
+    threads: 44
+    cpus_per_task: 44
+    mem_mb: 128000
+  rsem_quant:
+    runtime: 240
+    slurm_partition: 4hours
+    slurm_extra: "--cpu-freq=High-High:Performance"
+    threads: 44
+    cpus_per_task: 44
+    mem_gb: 128
+    mem_mb: 128000
+
+use-apptainer: True
+apptainer-prefix: workflow/rules/envs
+software-deployment-method: apptainer
+apptainer-args: -B /zata,/data
+
+rerun-incomplete: True
+printshellcmds: True
+keep-incomplete: True
