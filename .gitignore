@@ -5,6 +5,9 @@ STARManual.*
 old-pipeline.wdl
 rna-seq-pipeline
 __pycache__
-envs
 debug
 release
+results
+MOHD_RESULTS_*
+filter-indels
+*.simg

@@ -1,0 +1,16 @@
+Wed Jul 23 02:24:29 AM EDT 2025: Running multiqc
+
+/// MultiQC 🔍 v1.30
+
+            config | Loading config settings from: .test/multiqc_config.yaml
+       file_search | Search path: /zata/zippy/ramirezc/rna-smk/results
+
+              rsem | Found 15 reports
+          samtools | Found 15 flagstat reports
+              star | Found 15 reports
+             fastp | Found 15 reports
+
+     write_results | Data        : results/multiqc/multiqc_data
+     write_results | Report      : results/multiqc/multiqc_report.html
+           multiqc | MultiQC complete
+Wed Jul 23 02:24:49 AM EDT 2025: Finished multiqc

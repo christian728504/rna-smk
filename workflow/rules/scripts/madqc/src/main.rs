@@ -17,9 +17,9 @@ fn median(values: &mut [f64]) -> f64 {
 fn main() -> Result<(), Box<dyn Error>> {
     let mut qc_metrics = HashMap::new();
 
-    let matches = Command::new("seqtools")
-        .about("Sequence file utilities")
-        .about("Takes a gzipped fastq file as input and outputs a gzipped fasta file")
+    let matches = Command::new("madqc")
+        .about("MAD QC CLI")
+        .about("Calculates the MAD of log ratios given two RSEM gene quantification tsv files")
             .arg(
                 Arg::new("tsv1")
                     .long("tsv1")

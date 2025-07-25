@@ -143,7 +143,9 @@ class SingleEndedStarAligner(StarAligner):
     --outSAMtype BAM SortedByCoordinate  \
     --quantMode TranscriptomeSAM \
     --sjdbScore 1 \
-    --limitBAMsortRAM {ramGB}000000000"""
+    --limitBAMsortRAM {ramGB}000000000 \
+    --outBAMsortingThreadN {ncpus} \
+    --outBAMsortingBinsN 100"""
 
     def __init__(self, fastqs, ncpus, ramGB, indexdir, outdir):
         super().__init__(ncpus, ramGB, indexdir, outdir)
@@ -187,7 +189,9 @@ class PairedEndStarAligner(StarAligner):
     --outSAMtype BAM SortedByCoordinate \
     --quantMode TranscriptomeSAM \
     --sjdbScore 1 \
-    --limitBAMsortRAM {ramGB}000000000"""
+    --limitBAMsortRAM {ramGB}000000000 \
+    --outBAMsortingThreadN {ncpus} \
+    --outBAMsortingBinsN 100"""
 
     def __init__(self, fastqs, ncpus, ramGB, indexdir, outdir):
         super().__init__(ncpus, ramGB, indexdir, outdir)

@@ -2,28 +2,35 @@ executor: slurm
 jobs: 128
 
 set-resources:
-  star_index:
+  fastp:
+    runtime: 240
+    slurm_partition: 4hours
+    slurm_extra: "--cpu-freq=High-High:Performance"
+    threads: 8
+    cpus_per_task: 8
+    mem_mb: 32000
+  index:
     runtime: 240
     slurm_partition: 4hours
     slurm_extra: "--cpu-freq=High-High:Performance"
     threads: 44
     cpus_per_task: 44
-    mem_mb: 128000
-  star_align:
-    runtime: 240
-    slurm_partition: 4hours
+    mem_mb: 250000
+  align:
+    runtime: 720
+    slurm_partition: 12hours
     slurm_extra: "--cpu-freq=High-High:Performance"
-    threads: 44
-    cpus_per_task: 44
-    mem_gb: 128
-    mem_mb: 128000
+    threads: 22
+    cpus_per_task: 22
+    mem_gb: 125
+    mem_mb: 125000
   bam_to_signals:
-    runtime: 240
-    slurm_partition: 4hours
+    runtime: 30
+    slurm_partition: 30mins
     slurm_extra: "--cpu-freq=High-High:Performance"
     threads: 44
-    cpus_per_task: 44
-    mem_mb: 128000
+    cpus_per_task: 22
+    mem_mb: 250000
   rsem_index:
     runtime: 240
     slurm_partition: 4hours

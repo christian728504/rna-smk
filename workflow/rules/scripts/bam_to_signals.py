@@ -29,7 +29,6 @@ STAR_COMMAND = """STAR --runMode inputAlignmentsFromBAM \
                 --outWigReferencesPrefix chr
                 --outFileNamePrefix {output_dir}/"""
 
-
 def main(args):
     print(args)
     star_return_code = call_star(args.bamfile, args.is_stranded, args.output_dir)
@@ -39,7 +38,7 @@ def main(args):
     except AssertionError:
         logger.exception("Building bedGraph had a problem, most likely out of memory.")
         sys.exit(1)
-
+        
     kwargs = {
             "chrom_sizes": args.chrom_sizes,
             "threads": args.threads,
