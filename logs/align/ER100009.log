@@ -1,22 +1,24 @@
-Wed Jul 23 12:53:02 AM EDT 2025: Running STAR alignment
-2025-07-23 00:53:29,779 | INFO | __main__: Creating a paired-end aligner.
-2025-07-23 00:53:29,779 | INFO | __main__: Creating a paired-end aligner.
-2025-07-23 00:53:29,781 | INFO | __main__: running STAR command STAR --genomeDir /tmp/3969075c-daae-40d6-b5c2-2d7d4d0f7f4a --readFilesIn ER100009_R1.fastq.gz ER100009_R2.fastq.gz --outFileNamePrefix results/align/ER100009/ --readFilesCommand zcat --runThreadN 22 --genomeLoad NoSharedMemory --outFilterMultimapNmax 20 --alignSJoverhangMin 8 --alignSJDBoverhangMin 1 --outFilterMismatchNmax 999 --outFilterMismatchNoverReadLmax 0.04 --alignIntronMin 20 --alignIntronMax 1000000 --alignMatesGapMax 1000000 --outSAMheaderCommentFile COfile.txt --outSAMheaderHD @HD VN:1.4 SO:coordinate --outSAMunmapped Within --outFilterType BySJout --outSAMattributes NH HI AS NM MD --outSAMtype BAM SortedByCoordinate --quantMode TranscriptomeSAM --sjdbScore 1 --limitBAMsortRAM 125000000000
-2025-07-23 00:53:29,781 | INFO | __main__: running STAR command STAR --genomeDir /tmp/3969075c-daae-40d6-b5c2-2d7d4d0f7f4a --readFilesIn ER100009_R1.fastq.gz ER100009_R2.fastq.gz --outFileNamePrefix results/align/ER100009/ --readFilesCommand zcat --runThreadN 22 --genomeLoad NoSharedMemory --outFilterMultimapNmax 20 --alignSJoverhangMin 8 --alignSJDBoverhangMin 1 --outFilterMismatchNmax 999 --outFilterMismatchNoverReadLmax 0.04 --alignIntronMin 20 --alignIntronMax 1000000 --alignMatesGapMax 1000000 --outSAMheaderCommentFile COfile.txt --outSAMheaderHD @HD VN:1.4 SO:coordinate --outSAMunmapped Within --outFilterType BySJout --outSAMattributes NH HI AS NM MD --outSAMtype BAM SortedByCoordinate --quantMode TranscriptomeSAM --sjdbScore 1 --limitBAMsortRAM 125000000000
-	STAR --genomeDir /tmp/3969075c-daae-40d6-b5c2-2d7d4d0f7f4a --readFilesIn ER100009_R1.fastq.gz ER100009_R2.fastq.gz --outFileNamePrefix results/align/ER100009/ --readFilesCommand zcat --runThreadN 22 --genomeLoad NoSharedMemory --outFilterMultimapNmax 20 --alignSJoverhangMin 8 --alignSJDBoverhangMin 1 --outFilterMismatchNmax 999 --outFilterMismatchNoverReadLmax 0.04 --alignIntronMin 20 --alignIntronMax 1000000 --alignMatesGapMax 1000000 --outSAMheaderCommentFile COfile.txt --outSAMheaderHD @HD VN:1.4 SO:coordinate --outSAMunmapped Within --outFilterType BySJout --outSAMattributes NH HI AS NM MD --outSAMtype BAM SortedByCoordinate --quantMode TranscriptomeSAM --sjdbScore 1 --limitBAMsortRAM 125000000000
+Mon Nov 10 04:21:18 PM EST 2025: Running STAR alignment
+Mon Nov 10 04:21:18 PM EST 2025: ulimit set to 65536
+2025-11-10 16:21:18,375 | INFO | __main__: Creating a paired-end aligner.
+2025-11-10 16:21:18,375 | INFO | __main__: Formatting with arguments: 
+R1: results/processed/ER100009_R1.fastq.gz 
+R2: results/processed/ER100009_R2.fastq.gz 
+NCPUS: 44 
+RAMGB: 250 
+INDEXDIR: results/index 
+OUTDIR: results/align/ER100009
+2025-11-10 16:21:18,375 | INFO | __main__: running STAR command STAR --genomeDir results/index --readFilesIn results/processed/ER100009_R1.fastq.gz results/processed/ER100009_R2.fastq.gz --outFileNamePrefix results/align/ER100009/ --readFilesCommand zcat --runThreadN 44 --genomeLoad NoSharedMemory --outFilterMultimapNmax 20 --alignSJoverhangMin 8 --alignSJDBoverhangMin 1 --outFilterMismatchNmax 999 --outFilterMismatchNoverReadLmax 0.04 --alignIntronMin 20 --alignIntronMax 1000000 --alignMatesGapMax 1000000 --outSAMheaderCommentFile COfile.txt --outSAMheaderHD @HD VN:1.4 SO:coordinate --outSAMunmapped Within --outFilterType BySJout --outSAMattributes NH HI AS NM MD --outSAMtype BAM SortedByCoordinate --quantMode TranscriptomeSAM --sjdbScore 1 --limitBAMsortRAM 250000000000 --outBAMsortingThreadN 44 --outBAMsortingBinsN 100
+	STAR --genomeDir results/index --readFilesIn results/processed/ER100009_R1.fastq.gz results/processed/ER100009_R2.fastq.gz --outFileNamePrefix results/align/ER100009/ --readFilesCommand zcat --runThreadN 44 --genomeLoad NoSharedMemory --outFilterMultimapNmax 20 --alignSJoverhangMin 8 --alignSJDBoverhangMin 1 --outFilterMismatchNmax 999 --outFilterMismatchNoverReadLmax 0.04 --alignIntronMin 20 --alignIntronMax 1000000 --alignMatesGapMax 1000000 --outSAMheaderCommentFile COfile.txt --outSAMheaderHD @HD VN:1.4 SO:coordinate --outSAMunmapped Within --outFilterType BySJout --outSAMattributes NH HI AS NM MD --outSAMtype BAM SortedByCoordinate --quantMode TranscriptomeSAM --sjdbScore 1 --limitBAMsortRAM 250000000000 --outBAMsortingThreadN 44 --outBAMsortingBinsN 100
 	STAR version: 2.7.11b   compiled: 2024-01-25T16:12:02-05:00 :/home/dobin/data/STAR/STARcode/STAR.master/source
-Jul 23 00:53:29 ..... started STAR run
-Jul 23 00:53:29 ..... loading genome
-Jul 23 00:53:48 ..... started mapping
-Jul 23 00:59:51 ..... finished mapping
-Jul 23 00:59:55 ..... started sorting BAM
-Jul 23 01:02:17 ..... finished successfully
-2025-07-23 01:03:08,436 | INFO | __main__: Transcriptome bam is already rsem-sorted.
-2025-07-23 01:03:08,436 | INFO | __main__: Transcriptome bam is already rsem-sorted.
-2025-07-23 01:03:08,436 | INFO | __main__: Getting samtools flagstats for results/align/ER100009/ER100009_genome.bam
-2025-07-23 01:03:08,436 | INFO | __main__: Getting samtools flagstats for results/align/ER100009/ER100009_genome.bam
-2025-07-23 01:04:00,857 | INFO | __main__: Getting samtools flagstats for results/align/ER100009/ER100009_anno.bam
-2025-07-23 01:04:00,857 | INFO | __main__: Getting samtools flagstats for results/align/ER100009/ER100009_anno.bam
-Wed Jul 23 01:04:37 AM EDT 2025: samtools quickcheck OK
-/zata/zippy/ramirezc/rna-smk
-Wed Jul 23 01:04:51 AM EDT 2025: Finished STAR alignment
+Nov 10 16:21:18 ..... started STAR run
+Nov 10 16:21:18 ..... loading genome
+Nov 10 16:21:39 ..... started mapping
+Nov 10 16:26:11 ..... finished mapping
+Nov 10 16:26:14 ..... started sorting BAM
+Nov 10 16:26:27 ..... finished successfully
+2025-11-10 16:27:41,076 | INFO | __main__: Transcriptome bam is already rsem-sorted.
+2025-11-10 16:27:41,077 | INFO | __main__: Getting samtools flagstats for results/align/ER100009/ER100009_genome.bam
+2025-11-10 16:28:30,458 | INFO | __main__: Getting samtools flagstats for results/align/ER100009/ER100009_anno.bam
+Mon Nov 10 04:29:35 PM EST 2025: samtools quickcheck OK
+Mon Nov 10 04:29:35 PM EST 2025: Finished STAR alignment

@@ -1,5 +1,4 @@
 workdir: "/zata/zippy/ramirezc/rna-smk"
-tmpdir: "/tmp" # Must be an absolute path (i.e. startswith '/')
 aligner: "STAR"
 
 sequencing:
@@ -9,10 +8,9 @@ sequencing:
   rsem_seed: 42
   
 input_files:
-  metadata: ".test/metadata.tsv"
-  gtf_file: ".test/gencode.v48.basic.annotation.gtf" # Optional: Assert not GZIPPED
-  reference_fasta: ".test/GRCh38_no_alt_analysis_set_GCA_000001405.15.fasta" # Optional: Assert not GZIPPED
-  knownIsoforms: ".test/knownIsoforms.txt" # This does not work well with older version of gencode (failed with v29)
-  multiqc_config: ".test/multiqc_config.yaml"
+  metadata: "jobs/2026-01-06/metadata.tsv"
+  gtf_file: "jobs/2026-01-06/gencode.v49.basic.annotation.gtf" # Optional: Assert not GZIPPED
+  reference_fasta: "jobs/2026-01-06/GRCh38_no_alt_analysis_set_GCA_000001405.15.fasta" # Optional: Assert not GZIPPED
+  multiqc_config: "jobs/2026-01-06/multiqc_config.yaml"
 
 container: docker://clarity001/rna-smk:latest

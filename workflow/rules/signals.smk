@@ -22,12 +22,11 @@ rule bam_to_signals:
         genome_bam="results/align/{sample}/{sample}_genome.bam"
     output:
         **get_bam_to_signals_rule()['output'],
-        outdir=directory("results/signals/{sample}"),
         signal="results/signals/{sample}/.continue",
     params:
         sample=lambda wildcards: wildcards.sample,
         is_stranded=config['sequencing']['is_stranded'],
-        tmpdir=config['tmpdir'],
+        outdir=lambda wildcards: f"results/signals/{wildcards.sample}"
     container: config['container']
     log: "logs/signals/{sample}.log"
     shell:
@@ -35,34 +34,19 @@ rule bam_to_signals:
         exec >> {log} 2>&1
         ABS_LOG_PATH=$(realpath {log})
         echo "$(date): Running bam to singal conversion"
-
-        OUTDIR={output.outdir}
-
-        cp {input.genome_bam} {params.tmpdir}
-        TEMP_CHROMSIZES={params.tmpdir}/$(uuidgen).txt
-        cp {input.chromsizes} $TEMP_CHROMSIZES
-
-        cd {params.tmpdir}
-        mkdir -p $OUTDIR
         
-        samtools sort -@ {resources.threads} -m 1G -o {output.outdir}/temp_sorted.bam $(basename {input.genome_bam})
+        samtools sort -@ {resources.threads} -m 1G -o {params.outdir}/temp_sorted.bam {input.genome_bam}
 
-        bam_to_signals.py \
-            --logfile $ABS_LOG_PATH \
+        workflow/rules/scripts/bam_to_signals.py \
+            --logfile {log} \
             --threads {resources.threads} \
-            --output_dir {output.outdir} \
-            --bamfile {output.outdir}/temp_sorted.bam \
-            --chrom_sizes $TEMP_CHROMSIZES \
+            --output_dir {params.outdir} \
+            --bamfile {params.outdir}/temp_sorted.bam \
+            --chrom_sizes {input.chromsizes} \
             --is_stranded {params.is_stranded} \
             --bamroot {params.sample}_genome
-
-        rm -rf {output.outdir}/temp_sorted.bam
-        rm -rf $TEMP_CHROMSIZES
-        rm -rf $(basename {input.genome_bam})
-
-        cd -
-
-        mv {params.tmpdir}/$OUTDIR/* $OUTDIR
+        
+        rm {params.outdir}/temp_sorted.bam
 
         echo "$(date): Finished bam to singal conversion"
         touch {output.signal}

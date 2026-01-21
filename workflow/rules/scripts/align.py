@@ -155,6 +155,8 @@ class SingleEndedStarAligner(StarAligner):
         )
 
     def format_command_string(self, input_string):
+        logger.info(f"Formatting with arguments: \n{self.input_fastq} \n{self.ncpus} \n{self.ramGB} \n{self.indexdir} \n{self.outdir}")
+        
         cmd = input_string.format(
             infastq=self.input_fastq,
             ncpus=self.ncpus,
@@ -202,6 +204,8 @@ class PairedEndStarAligner(StarAligner):
         )
 
     def format_command_string(self, input_string):
+        logger.info(f"Formatting with arguments: \nR1: {self.fastq_read1} \nR2: {self.fastq_read2} \nNCPUS: {self.ncpus} \nRAMGB: {self.ramGB} \nINDEXDIR: {self.indexdir} \nOUTDIR: {self.outdir}")
+        
         cmd = input_string.format(
             read1_fq_gz=self.fastq_read1,
             read2_fq_gz=self.fastq_read2,
@@ -278,9 +282,6 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--logfile", help="Path to log file.", required=True
-    )
-    parser.add_argument(
         "--output_dir", help="Path to output directory.", required=True
     )
     parser.add_argument(
@@ -316,10 +317,5 @@ if __name__ == "__main__":
     )
 
     args = parser.parse_args()
-    
-    filehandler = logging.FileHandler(args.logfile)
-    filehandler.setLevel(logging.DEBUG)
-    filehandler.setFormatter(formatter)
-    logger.addHandler(filehandler)
-    
+
     main(args)

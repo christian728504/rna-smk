@@ -22,10 +22,10 @@ localrules: multiqc
 
 rule all:
     input:
-        expand(["results/processed/{sample}/{sample}_R1.fastq.gz", "results/processed/{sample}/{sample}_R2.fastq.gz"], sample=samples),
-        directory("results/index"),
+        expand(["results/processed/{sample}_R1.fastq.gz", "results/processed/{sample}_R2.fastq.gz"], sample=samples),
+        "results/index.continue",
         expand("results/align/{sample}/.continue", sample=samples),
         expand("results/signals/{sample}/.continue", sample=samples),
-        directory("results/rsem_index"),
-        expand("results/rsem_quant/{sample}/.continue", sample=samples),
+        "results/rsem_index.continue",
+        expand("results/rsem_quant/{sample}.continue", sample=samples),
         "results/multiqc/multiqc_report.html"

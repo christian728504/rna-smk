@@ -1,27 +1,26 @@
-Wed Jul 23 01:16:52 AM EDT 2025: Running bam to singal conversion
+Mon Nov 10 10:48:31 AM EST 2025: Running bam to singal conversion
 [bam_sort_core] merging from 0 files and 44 in-memory blocks...
-Namespace(logfile='/zata/zippy/ramirezc/rna-smk/logs/signals/ER100014.log', output_dir='results/signals/ER100014', threads=44, bamfile='results/signals/ER100014/temp_sorted.bam', chrom_sizes='/tmp/08964788-eccb-40c3-a45d-a37975c643ec.txt', is_stranded=True, bamroot='ER100014_genome')
-2025-07-23 01:25:22,013 | INFO | __main__: Running STAR command STAR --runMode inputAlignmentsFromBAM                 --inputBAMfile results/signals/ER100014/temp_sorted.bam                 --outWigType bedGraph                 --outWigStrand Stranded                 --outWigReferencesPrefix chr
+Namespace(logfile='logs/signals/ER100014.log', output_dir='results/signals/ER100014', threads=44, bamfile='results/signals/ER100014/temp_sorted.bam', chrom_sizes='results/index/chrNameLength.txt', is_stranded=True, bamroot='ER100014_genome')
+2025-11-10 10:50:09,293 | INFO | __main__: Running STAR command STAR --runMode inputAlignmentsFromBAM                 --inputBAMfile results/signals/ER100014/temp_sorted.bam                 --outWigType bedGraph                 --outWigStrand Stranded                 --outWigReferencesPrefix chr
                 --outFileNamePrefix results/signals/ER100014/
-2025-07-23 01:25:22,013 | INFO | __main__: Running STAR command STAR --runMode inputAlignmentsFromBAM                 --inputBAMfile results/signals/ER100014/temp_sorted.bam                 --outWigType bedGraph                 --outWigStrand Stranded                 --outWigReferencesPrefix chr
+2025-11-10 10:50:09,293 | INFO | __main__: Running STAR command STAR --runMode inputAlignmentsFromBAM                 --inputBAMfile results/signals/ER100014/temp_sorted.bam                 --outWigType bedGraph                 --outWigStrand Stranded                 --outWigReferencesPrefix chr
                 --outFileNamePrefix results/signals/ER100014/
-Jul 23 01:25:22 ..... reading from BAM, output wiggle
-Jul 23 01:30:31 ..... done
-2025-07-23 01:30:32,010 | INFO | __main__: Sorting bedgraph: bedtools sort -i results/signals/ER100014/Signal.UniqueMultiple.str1.out.bg
-2025-07-23 01:30:32,010 | INFO | __main__: Sorting bedgraph: bedtools sort -i results/signals/ER100014/Signal.UniqueMultiple.str1.out.bg
-2025-07-23 01:31:25,032 | INFO | __main__: Building bigWig: bigtools bedgraphtobigwig --nthreads 44 results/signals/ER100014/Signal.UniqueMultiple.str1.out.sorted.bg /tmp/08964788-eccb-40c3-a45d-a37975c643ec.txt results/signals/ER100014/ER100014_genome_minusAll.bw
-2025-07-23 01:31:25,032 | INFO | __main__: Building bigWig: bigtools bedgraphtobigwig --nthreads 44 results/signals/ER100014/Signal.UniqueMultiple.str1.out.sorted.bg /tmp/08964788-eccb-40c3-a45d-a37975c643ec.txt results/signals/ER100014/ER100014_genome_minusAll.bw
-2025-07-23 01:31:42,564 | INFO | __main__: Sorting bedgraph: bedtools sort -i results/signals/ER100014/Signal.Unique.str1.out.bg
-2025-07-23 01:31:42,564 | INFO | __main__: Sorting bedgraph: bedtools sort -i results/signals/ER100014/Signal.Unique.str1.out.bg
-2025-07-23 01:32:36,825 | INFO | __main__: Building bigWig: bigtools bedgraphtobigwig --nthreads 44 results/signals/ER100014/Signal.Unique.str1.out.sorted.bg /tmp/08964788-eccb-40c3-a45d-a37975c643ec.txt results/signals/ER100014/ER100014_genome_minusUniq.bw
-2025-07-23 01:32:36,825 | INFO | __main__: Building bigWig: bigtools bedgraphtobigwig --nthreads 44 results/signals/ER100014/Signal.Unique.str1.out.sorted.bg /tmp/08964788-eccb-40c3-a45d-a37975c643ec.txt results/signals/ER100014/ER100014_genome_minusUniq.bw
-2025-07-23 01:32:54,399 | INFO | __main__: Sorting bedgraph: bedtools sort -i results/signals/ER100014/Signal.UniqueMultiple.str2.out.bg
-2025-07-23 01:32:54,399 | INFO | __main__: Sorting bedgraph: bedtools sort -i results/signals/ER100014/Signal.UniqueMultiple.str2.out.bg
-2025-07-23 01:33:52,595 | INFO | __main__: Building bigWig: bigtools bedgraphtobigwig --nthreads 44 results/signals/ER100014/Signal.UniqueMultiple.str2.out.sorted.bg /tmp/08964788-eccb-40c3-a45d-a37975c643ec.txt results/signals/ER100014/ER100014_genome_plusAll.bw
-2025-07-23 01:33:52,595 | INFO | __main__: Building bigWig: bigtools bedgraphtobigwig --nthreads 44 results/signals/ER100014/Signal.UniqueMultiple.str2.out.sorted.bg /tmp/08964788-eccb-40c3-a45d-a37975c643ec.txt results/signals/ER100014/ER100014_genome_plusAll.bw
-2025-07-23 01:34:12,029 | INFO | __main__: Sorting bedgraph: bedtools sort -i results/signals/ER100014/Signal.Unique.str2.out.bg
-2025-07-23 01:34:12,029 | INFO | __main__: Sorting bedgraph: bedtools sort -i results/signals/ER100014/Signal.Unique.str2.out.bg
-2025-07-23 01:35:07,980 | INFO | __main__: Building bigWig: bigtools bedgraphtobigwig --nthreads 44 results/signals/ER100014/Signal.Unique.str2.out.sorted.bg /tmp/08964788-eccb-40c3-a45d-a37975c643ec.txt results/signals/ER100014/ER100014_genome_plusUniq.bw
-2025-07-23 01:35:07,980 | INFO | __main__: Building bigWig: bigtools bedgraphtobigwig --nthreads 44 results/signals/ER100014/Signal.Unique.str2.out.sorted.bg /tmp/08964788-eccb-40c3-a45d-a37975c643ec.txt results/signals/ER100014/ER100014_genome_plusUniq.bw
-/zata/zippy/ramirezc/rna-smk
-Wed Jul 23 01:35:30 AM EDT 2025: Finished bam to singal conversion
+Nov 10 10:50:09 ..... reading from BAM, output wiggle
+Nov 10 10:54:36 ..... done
+2025-11-10 10:54:36,742 | INFO | __main__: Sorting bedgraph: bedtools sort -i results/signals/ER100014/Signal.UniqueMultiple.str1.out.bg
+2025-11-10 10:54:36,742 | INFO | __main__: Sorting bedgraph: bedtools sort -i results/signals/ER100014/Signal.UniqueMultiple.str1.out.bg
+2025-11-10 10:55:30,070 | INFO | __main__: Building bigWig: bigtools bedgraphtobigwig --nthreads 44 results/signals/ER100014/Signal.UniqueMultiple.str1.out.sorted.bg results/index/chrNameLength.txt results/signals/ER100014/ER100014_genome_minusAll.bw
+2025-11-10 10:55:30,070 | INFO | __main__: Building bigWig: bigtools bedgraphtobigwig --nthreads 44 results/signals/ER100014/Signal.UniqueMultiple.str1.out.sorted.bg results/index/chrNameLength.txt results/signals/ER100014/ER100014_genome_minusAll.bw
+2025-11-10 10:55:46,508 | INFO | __main__: Sorting bedgraph: bedtools sort -i results/signals/ER100014/Signal.Unique.str1.out.bg
+2025-11-10 10:55:46,508 | INFO | __main__: Sorting bedgraph: bedtools sort -i results/signals/ER100014/Signal.Unique.str1.out.bg
+2025-11-10 10:56:35,812 | INFO | __main__: Building bigWig: bigtools bedgraphtobigwig --nthreads 44 results/signals/ER100014/Signal.Unique.str1.out.sorted.bg results/index/chrNameLength.txt results/signals/ER100014/ER100014_genome_minusUniq.bw
+2025-11-10 10:56:35,812 | INFO | __main__: Building bigWig: bigtools bedgraphtobigwig --nthreads 44 results/signals/ER100014/Signal.Unique.str1.out.sorted.bg results/index/chrNameLength.txt results/signals/ER100014/ER100014_genome_minusUniq.bw
+2025-11-10 10:56:51,128 | INFO | __main__: Sorting bedgraph: bedtools sort -i results/signals/ER100014/Signal.UniqueMultiple.str2.out.bg
+2025-11-10 10:56:51,128 | INFO | __main__: Sorting bedgraph: bedtools sort -i results/signals/ER100014/Signal.UniqueMultiple.str2.out.bg
+2025-11-10 10:57:46,385 | INFO | __main__: Building bigWig: bigtools bedgraphtobigwig --nthreads 44 results/signals/ER100014/Signal.UniqueMultiple.str2.out.sorted.bg results/index/chrNameLength.txt results/signals/ER100014/ER100014_genome_plusAll.bw
+2025-11-10 10:57:46,385 | INFO | __main__: Building bigWig: bigtools bedgraphtobigwig --nthreads 44 results/signals/ER100014/Signal.UniqueMultiple.str2.out.sorted.bg results/index/chrNameLength.txt results/signals/ER100014/ER100014_genome_plusAll.bw
+2025-11-10 10:58:04,973 | INFO | __main__: Sorting bedgraph: bedtools sort -i results/signals/ER100014/Signal.Unique.str2.out.bg
+2025-11-10 10:58:04,973 | INFO | __main__: Sorting bedgraph: bedtools sort -i results/signals/ER100014/Signal.Unique.str2.out.bg
+2025-11-10 10:58:56,804 | INFO | __main__: Building bigWig: bigtools bedgraphtobigwig --nthreads 44 results/signals/ER100014/Signal.Unique.str2.out.sorted.bg results/index/chrNameLength.txt results/signals/ER100014/ER100014_genome_plusUniq.bw
+2025-11-10 10:58:56,804 | INFO | __main__: Building bigWig: bigtools bedgraphtobigwig --nthreads 44 results/signals/ER100014/Signal.Unique.str2.out.sorted.bg results/index/chrNameLength.txt results/signals/ER100014/ER100014_genome_plusUniq.bw
+Mon Nov 10 10:59:14 AM EST 2025: Finished bam to singal conversion

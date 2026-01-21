@@ -1,5 +1,5 @@
 executor: slurm
-jobs: 128
+jobs: 40
 
 set-resources:
   fastp:
@@ -17,13 +17,11 @@ set-resources:
     cpus_per_task: 44
     mem_mb: 250000
   align:
-    runtime: 720
-    slurm_partition: 12hours
     slurm_extra: "--cpu-freq=High-High:Performance"
-    threads: 22
-    cpus_per_task: 22
-    mem_gb: 125
-    mem_mb: 125000
+    threads: 44
+    cpus_per_task: 44
+    mem_gb: 250
+    mem_mb: 250000
   bam_to_signals:
     runtime: 30
     slurm_partition: 30mins
@@ -39,12 +37,11 @@ set-resources:
     cpus_per_task: 44
     mem_mb: 128000
   rsem_quant:
-    runtime: 240
-    slurm_partition: 4hours
+    runtime: 720
+    slurm_partition: 12hours
     slurm_extra: "--cpu-freq=High-High:Performance"
     threads: 44
     cpus_per_task: 44
-    mem_gb: 128
     mem_mb: 128000
 
 use-apptainer: True
@@ -52,6 +49,7 @@ apptainer-prefix: workflow/rules/envs
 software-deployment-method: apptainer
 apptainer-args: -B /zata,/data
 
+# max-jobs-per-timespan: 1/2s
 rerun-incomplete: True
 printshellcmds: True
-keep-incomplete: True
+# keep-incomplete: True
