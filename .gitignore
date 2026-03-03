@@ -1,19 +1,20 @@
 # User-defined
 jobs/
 logs/
-.test*
-prototyping
-.snakemake
-STARManual.*
-old-pipeline.wdl
-rna-seq-pipeline
-__pycache__
 debug
+.test*
+*.simg
 release
 results
-MOHD_RESULTS_*
+scratch/
+ARCHIVED/
+.snakemake
+prototyping
+STARManual.*
 filter-indels
-*.simg
+MOHD_RESULTS_*
+old-pipeline.wdl
+rna-seq-pipeline
 RSEM-Quant-Manifest.txt
 
 # Byte-compiled / optimized / DLL files
