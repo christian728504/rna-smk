@@ -9,6 +9,8 @@ results
 scratch/
 ARCHIVED/
 .snakemake
+layout.txt
+pipeline.txt
 prototyping
 STARManual.*
 filter-indels
